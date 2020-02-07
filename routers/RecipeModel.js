@@ -23,9 +23,7 @@ function getRecipeById(recipe_id) {
     return db('recipes as r')
         .where({ id: Number(recipe_id) })
         .first()
-        .then(recipe => {
-            return recipe || null
-        })
+        .then(recipe => recipe || null)
 }
 function getShoppingList(recipe_id) {
     return db('recipes as r')
